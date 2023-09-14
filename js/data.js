@@ -88,3 +88,14 @@ const infoList = [
   },
 ]
   
+// 3번째 배열에서 answer 객체의 answer 속성 값을 추출하여 cho 함수에 전달
+const answerText = qnaList[2].a.map(answer => answer.answer);
+
+// cho 함수를 호출하고 answerText 값을 전달
+cho(answerText);
+
+// cho 함수 정의
+function cho(answer) {
+  // answer를 사용하는 코드 작성
+  // 예: console.log(answer);
+}

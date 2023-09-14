@@ -53,6 +53,15 @@ const calcScore = () => {
 
 const sortResult = (point) => {
   let num = 0;
+  let str = ['1. 어차피 안될거란 생각',
+  '2. 내가 안해도 누가 하겠지란 생각',
+  '3. 내가하면 안될 것 같아 생각',
+  '4. 혼자라는 생각에 지침',
+  '5. 소속감이 크지않아 거점가기 힘듦',
+  '6. 예전처럼 할 자신이 없음',
+  '7. 잎사귀 구할 생각에 막막함',
+  '8. 방법을 알려주면 어떻게는 해보겠지만 모름'];
+
   let x = [
   '1. 내 환경 속에서 할 수 있는 전도의 일을 구역장님과 의논해보기',
   '2. 환경정리계획을 중장기적으로 세워보기',
@@ -96,28 +105,62 @@ const sortResult = (point) => {
   } else {
     num = 5;
   }
+
+cho = point % 10; // point의 1의 자리 숫자를 얻습니다.
+console.log(num);
+console.log(cho);
+
+// num 값을 기반으로 cho 텍스트를 설정합니다.
+switch (cho) {
+  case 0:
+    choElement.textContent = str[0];
+    break;
+  case 1:
+    choElement.textContent = str[1];
+    break;
+  case 2:
+    choElement.textContent = str[2];
+    break;
+  case 3:
+    choElement.textContent = str[3];
+    break;
+  case 4:
+    choElement.textContent = str[4];
+    break;
+  case 5:
+    choElement.textContent = str[5];
+    break;
+  case 6:
+    choElement.textContent = str[6];
+    break;
+  case 7:
+    choElement.textContent = str[7];
+    break;
+  case 8:
+    choElement.textContent = str[8];
+    break;
+  case 9:
+    choElement.textContent = str[9];
+    break;
+  default:
+    choElement.textContent = '기본 텍스트'; // num이 0이거나 10 이상인 경우
+    break;
+}
+
   return num;
 }
 
-// const choose = (qnaList) => {
-//   let point = 0;
-  let str = ['1. 어차피 안될거란 생각',
-      '2. 내가 안해도 누가 하겠지란 생각',
-      '3. 내가하면 안될 것 같아 생각',
-      '4. 혼자라는 생각에 지침',
-      '5. 소속감이 크지않아 거점가기 힘듦',
-      '6. 예전처럼 할 자신이 없음',
-      '7. 잎사귀 구할 생각에 막막함',
-      '8. 방법을 알려주면 어떻게는 해보겠지만 모름']
+const choElement = document.querySelector('.cho');
 
-      for (let num = 0; num < str.length; num++) {
-        if (qnaList[2].a[num].score <= 1) {
-          const choElement = document.querySelector('.cho'); // 클래스명 ".cho"를 가진 요소 선택
-          if (choElement) {
-            choElement.textContent = str[num]; // 텍스트 내용 변경
-          }
-        }
-      }
+// point의 1의 자리 숫자에 따라 cho 텍스트 값을 변경합니다.
+
+
+
+// const choose = (qnaList) => {
+// let point = 0;
+
+  // desc.innerHTML = infoList[grade].desc;
+  // const desc = document.querySelector('.res');
 
 //   if (qnaList[2].a[num].score <= 1) {
 //     cholement.textContent = str[num];
@@ -251,6 +294,7 @@ const addAnswer = (answerTxt, idx) => {
       parent.classList.remove('fade-out-5-4');
       goNext();
     }, 800);
+    console.log(a);
   });
 
   setTimeout(() => answer.style.animation =
@@ -262,6 +306,7 @@ const addAnswer = (answerTxt, idx) => {
 const goNext = () => {
   if (qIdx++ === qnaList.length - 1) {
     end();
+    cho();
     return;
   }
 
