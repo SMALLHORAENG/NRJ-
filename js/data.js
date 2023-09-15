@@ -22,29 +22,29 @@ const qnaList = [
   {
     q: '3. 전도하라는 말을 들으면 가장 먼저 드는 생각은? ',
     a: [
-      { answer: '1. 해도 어차피 안될거야..', score: 1 },
-      { answer: '2. 내가 안해도 누군가 하겠지?', score: 2 },
-      { answer: '3. 내가 나가면 열매 떨어질 것 같아..', score: 3 },
-      { answer: '4. 거점에 혼자라는 생각에 지친다', score: 4 },
-      { answer: '5. 구역에 소속감 크지 않아서 거점 가는게 쉽지 않다', score: 5 },
-      { answer: '6. 예전처럼 할 자신이 없다', score: 6 },
-      { answer: '7. 잎사귀 구할 생각에 막막하다', score: 7 },
-      { answer: '8. 방법을 알려주면 어떻게든 해보겠는데 방법을 잘 모르겠다', score: 8 }
+      { answer: '1. 해도 어차피 안될거야..', score: 10 },
+      { answer: '2. 내가 안해도 누군가 하겠지?', score: 20 },
+      { answer: '3. 내가 나가면 열매 떨어질 것 같아..', score: 30 },
+      { answer: '4. 거점에 혼자라는 생각에 지친다', score: 40 },
+      { answer: '5. 구역에 소속감 크지 않아서 거점 가는게 쉽지 않다', score: 50 },
+      { answer: '6. 예전처럼 할 자신이 없다', score: 60 },
+      { answer: '7. 잎사귀 구할 생각에 막막하다', score: 70 },
+      { answer: '8. 방법을 알려주면 어떻게든 해보겠는데 방법을 잘 모르겠다', score: 80 }
   ]
   },
   {
     q: '4. 3번의 이유로 인해,',
     a: [
       { answer: 'a. 이게 해결만 된다면 전도,, 어떻게든 하고싶다!! ', score: 0 },
-      { answer: 'b. 전도 시도조차 어렵다 ', score: 9 }
+      { answer: 'b. 전도 시도조차 어렵다 ', score: 1000 }
     ]
   },
   {
     q: '5. 나에게 해당되는 것 하나를 선택해주세요',
     a: [
-      { answer: 'a. 나는 자주쓰거나 컨셉을 잘 입을 수 있는 섭외 도구가 없다 ', score: 30 },
-      { answer: 'b. 섭외도구는 있지만 익숙치 않고 버벅댄다 ', score: 40 },
-      { answer: 'c. 섭외도구도 있고 익숙한데, 이걸로 열매 정파가 잘 안된다 ', score: 50 }
+      { answer: 'a. 나는 자주쓰거나 컨셉을 잘 입을 수 있는 섭외 도구가 없다 ', score: 3 },
+      { answer: 'b. 섭외도구는 있지만 익숙치 않고 버벅댄다 ', score: 5 },
+      { answer: 'c. 섭외도구도 있고 익숙한데, 이걸로 열매 정파가 잘 안된다 ', score: 7 }
     ]
   },
   
@@ -82,20 +82,10 @@ const infoList = [
   {
     from: 81,
     to: 100,
-    mLeft: '70%',
+    mLeft: '100%',
     name: '하던대로 하는 캡틴 아메리카',
     desc: '하던대로만 하는 캡틴아메리카인 당신, 당신은 하던대로 하던걸 바꾸고, 피드백받은것을 이행하기만 하면 모든 것이 잘될 수 있습니다, 내년에 전도왕 1등'
   },
 ]
   
-// 3번째 배열에서 answer 객체의 answer 속성 값을 추출하여 cho 함수에 전달
-const answerText = qnaList[2].a.map(answer => answer.answer);
 
-// cho 함수를 호출하고 answerText 값을 전달
-cho(answerText);
-
-// cho 함수 정의
-function cho(answer) {
-  // answer를 사용하는 코드 작성
-  // 예: console.log(answer);
-}

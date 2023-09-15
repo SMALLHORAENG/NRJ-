@@ -81,66 +81,64 @@ const sortResult = (point) => {
   // desc.innerHTML = infoList[grade].desc;
   // const desc = document.querySelector('.res');
 
-  if (point > 100 && point <= 159) {
+  if (Math.floor(point / 100) == 1 ) {
     num = 0;
     document.querySelector('.ch-text').innerText = x[0];
     document.querySelector('.ch-text2').innerText = x[1];
     
-  } else if (point > 200 && point <= 259) {
+  } else if (Math.floor(point / 100) == 2 || Math.floor(point / 1000) == 1) {
     num = 1;
     document.querySelector('.ch-text').innerText = x[2];
     document.querySelector('.ch-text2').innerText = x[3];
     document.querySelector('.ch-text3').innerText = x[4];
-  } else if (point > 30 && point <= 39) {
+  } else if (Math.floor(point % 10 ) == 3) {
     num = 2;
     document.querySelector('.ch-text').innerText = x[5];
-  } else if (point > 40 && point <= 49) {
+  } else if (Math.floor(point % 10 )== 5) {
     num = 3;
     document.querySelector('.ch-text').innerText = x[6];
     document.querySelector('.ch-text2').innerText = x[7];
     document.querySelector('.ch-text3').innerText = x[8];
-  } else if (point > 50 && point <= 80) {
+  } else if (Math.floor(point % 10 ) == 7) {
     num = 4;
     document.querySelector('.ch-text').innerText = x[9];
   } else {
     num = 5;
   }
 
-cho = point % 10; // point의 1의 자리 숫자를 얻습니다.
+sum = point % 100 / 10;
+cho = Math.floor(sum) % 10;
 console.log(num);
 console.log(cho);
 
 // num 값을 기반으로 cho 텍스트를 설정합니다.
-switch (cho) {
-  case 0:
+switch(cho){
+  case 1:
     choElement.textContent = str[0];
     break;
-  case 1:
+  case 2:
     choElement.textContent = str[1];
     break;
-  case 2:
+  case 3:
     choElement.textContent = str[2];
     break;
-  case 3:
+  case 4:
     choElement.textContent = str[3];
     break;
-  case 4:
+  case 5:
     choElement.textContent = str[4];
     break;
-  case 5:
+  case 6 :
     choElement.textContent = str[5];
     break;
-  case 6:
+  case 7:
     choElement.textContent = str[6];
     break;
-  case 7:
+  case 8:
     choElement.textContent = str[7];
     break;
-  case 8:
-    choElement.textContent = str[8];
-    break;
   case 9:
-    choElement.textContent = str[9];
+    choElement.textContent = str[7];
     break;
   default:
     choElement.textContent = '기본 텍스트'; // num이 0이거나 10 이상인 경우
@@ -306,7 +304,6 @@ const addAnswer = (answerTxt, idx) => {
 const goNext = () => {
   if (qIdx++ === qnaList.length - 1) {
     end();
-    cho();
     return;
   }
 
@@ -326,7 +323,7 @@ const goNext = () => {
       addAnswer(qNum.a[i].answer, i);
     }
     qna.style.opacity = 1;
-  }, 700);
+  }, 700);                                                                                                                                                                                                                                                 
 }
 
 const begin = () => {
