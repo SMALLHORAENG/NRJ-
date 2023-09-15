@@ -5,8 +5,8 @@ const qnaList = [
       { answer: 'a. 5회이상', score: 0 },
       { answer: 'b. 3-4회', score: 0 },
       { answer: 'c. 1-2회', score: 0 },
-      { answer: 'd. 환경이 진짜 안돼서 가고 싶어도 못가고있다', score: 100 },
-      { answer: 'e. 환경이 완전 안되진 않지만, 몸과 마음이 무거워서 못나가고있다', score: 200 }
+      { answer: 'd. 환경이 진짜 안돼서 가고 싶어도 못가고있다', score: 300 },
+      { answer: 'e. 환경이 완전 안되진 않지만, 몸과 마음이 무거워서 못나가고있다', score: 500 }
     ]
   },
   {
@@ -36,7 +36,7 @@ const qnaList = [
     q: '4. 3번의 이유로 인해,',
     a: [
       { answer: 'a. 이게 해결만 된다면 전도,, 어떻게든 하고싶다!! ', score: 0 },
-      { answer: 'b. 전도 시도조차 어렵다 ', score: 1000 }
+      { answer: 'b. 전도 시도조차 어렵다 ', score: 100 }
     ]
   },
   {

@@ -81,30 +81,27 @@ const sortResult = (point) => {
   // desc.innerHTML = infoList[grade].desc;
   // const desc = document.querySelector('.res');
 
-  if (Math.floor(point / 100) == 1 ) {
+  if (point >= 300 && point <= 500) {
     num = 0;
     document.querySelector('.ch-text').innerText = x[0];
     document.querySelector('.ch-text2').innerText = x[1];
-    
-  } else if (Math.floor(point / 100) == 2 || Math.floor(point / 1000) == 1) {
+  } else if (point >= 500) {
     num = 1;
     document.querySelector('.ch-text').innerText = x[2];
     document.querySelector('.ch-text2').innerText = x[3];
     document.querySelector('.ch-text3').innerText = x[4];
-  } else if (Math.floor(point % 10 ) == 3) {
+  } else if (point <= 100 && Math.floor(point % 10 ) == 3) {
     num = 2;
     document.querySelector('.ch-text').innerText = x[5];
-  } else if (Math.floor(point % 10 )== 5) {
+  } else if (point <= 100 && Math.floor(point % 10 ) == 5) {
     num = 3;
     document.querySelector('.ch-text').innerText = x[6];
     document.querySelector('.ch-text2').innerText = x[7];
-    document.querySelector('.ch-text3').innerText = x[8];
-  } else if (Math.floor(point % 10 ) == 7) {
+    document.querySelector('.ch-text3').innerText = x[8]; }
+  else if (point <= 100 && Math.floor(point % 10 ) == 7) {
     num = 4;
     document.querySelector('.ch-text').innerText = x[9];
-  } else {
-    num = 5;
-  }
+  } else  num = 4;
 
 sum = point % 100 / 10;
 cho = Math.floor(sum) % 10;
